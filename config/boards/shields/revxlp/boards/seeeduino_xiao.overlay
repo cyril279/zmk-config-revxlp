@@ -1,0 +1,35 @@
+#include <dt-bindings/pinctrl/samd21-da1gXabcd-pinctrl.h>
+
+&pinctrl {
+    pwm_default: pwm_default {
+        group1 {
+            pinmux = <PB9E_TC4_WO1>;
+        };
+    };
+    pwm_sleep: pwm_sleep {
+        group1 {
+            pinmux = <PB9E_TC4_WO1>;
+        };
+    };
+};
+
+&tc4 {
+    status = "okay";
+    compatible = "atmel,sam-pwm";
+    divider = <1>;
+    prescaler = <4>;
+    #pwm-cells = <3>;
+
+    pinctrl-0 = <&pwm_default>;
+    pinctrl-1 = <&pwm_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+/ {
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&tc4 1 PWM_MSEC(20) PWM_POLARITY_INVERTED>;
+        };
+    };
+};
