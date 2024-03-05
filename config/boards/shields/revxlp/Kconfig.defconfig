@@ -8,7 +8,10 @@ config ZMK_KEYBOARD_NAME
 
 if ZMK_BACKLIGHT
 
-config LED_GPIO
+config PWM
+    default y
+
+config LED_PWM
     default y
 
 endif # ZMK_BACKLIGHT
