@@ -18,18 +18,18 @@
 
 / {
     tap_dances {
-    	shifty: shift_caps_word {
-		compatible = "zmk,behavior-tap-dance";
-		#binding-cells = <0>;
-		tapping-term-ms = <150>;
-		bindings = <&kp LSHFT>, <&caps_word>;
+        shifty: shift_caps_word {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LSHFT>, <&caps_word>;
         };
     };
     cond_layers {
         compatible = "zmk,conditional-layers";
-	tri {
-	    if-layers = <LOWER RAISE>;
-	    then-layer = <CONFIG>;
+        tri {
+            if-layers = <LOWER RAISE>;
+            then-layer = <CONFIG>;
         };
     };
     behaviors {
