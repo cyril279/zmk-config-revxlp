@@ -1,8 +1,6 @@
 #include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
 #include <dt-bindings/pwm/pwm.h>
 
-&backlight { status = "disabled"; };
-
 &pinctrl {
     pwm_ch0b_default: pwm_ch0b_default {
         group1 {
