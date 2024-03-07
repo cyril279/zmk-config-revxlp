@@ -32,7 +32,7 @@
     backlight: pwmleds {
         compatible = "pwm-leds";
         pwm_led_0 {
-            pwms = <&tcc0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+            pwms = <&tcc0 0 1000 PWM_POLARITY_NORMAL>;
         };
     };
 };
