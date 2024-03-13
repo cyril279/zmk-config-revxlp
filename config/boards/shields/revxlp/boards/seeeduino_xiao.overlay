@@ -1,5 +1,4 @@
 #include <dt-bindings/pinctrl/samd21-da1gXabcd-pinctrl.h>
-#include <dt-bindings/pwm/pwm.h>
 
 &pinctrl {
     pwm_default: pwm_default {
