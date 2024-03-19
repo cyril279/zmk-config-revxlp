@@ -13,23 +13,6 @@
     };
 };
 
-/ {
-    chosen {
-        zmk,backlight = &backlight;
-    };
-
-    aliases {
-        pwm-led0 = &pwm_led_0;
-    };
-
-    backlight: pwmleds {
-        compatible = "pwm-leds";
-        pwm_led_0: pwm_led_0 {
-            pwms = <&tc4 1 PWM_MSEC(20)>;
-        };
-    };
-};
-
 &tc4 {
     status = "okay";
     compatible = "atmel,sam0-tcc-pwm";
@@ -41,4 +24,13 @@
     pinctrl-0 = <&pwm_default>;
     pinctrl-1 = <&pwm_sleep>;
     pinctrl-names = "default", "sleep";
+};
+
+/ {
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&tc4 1 PWM_MSEC(20)>;
+        };
+    };
 };
