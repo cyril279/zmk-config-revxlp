@@ -13,6 +13,14 @@
     };
 };
 
+&xiao_serial {
+    status = "disabled";
+};
+
+&xiao_dac {
+    status = "disabled";
+};
+
 &tc4 {
     status = "okay";
     compatible = "atmel,sam0-tcc-pwm";
